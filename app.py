@@ -39,7 +39,11 @@ if __name__ == "__main__":
     def cmd_value(parameter):
         num_index = argv.index(parameter) + 1
         return argv[num_index]
-    note_id = cmd_value('-n')
+    try:
+        note_id = cmd_value('-n')
+    except:
+        print('Missing bear note id.')
+        exit()
     for line in input_data:
         if line[:3] == '## ' or line[:2] == '# ':
             subheader = output_data.index(line) + 2
