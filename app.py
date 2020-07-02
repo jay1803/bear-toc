@@ -42,8 +42,7 @@ if __name__ == "__main__":
     try:
         note_id = cmd_value('-n')
     except:
-        print('Missing bear note id.')
-        exit()
+        note_id = input('Please input the note id: ')
     for line in input_data:
         if line[:3] == '## ' or line[:2] == '# ':
             subheader = output_data.index(line) + 2
